@@ -78,7 +78,8 @@ def DisplayMenu():
   print('Select an option from the menu (or enter q to quit): ', end='')
 
 def GetMenuChoice():
-  Choice = input()
+  Choice = input().lower
+  if choice 
   print()
   return Choice
 
@@ -135,7 +136,13 @@ def GetPlayerName():
   return PlayerName
 
 def GetChoiceFromUser():
-  Choice = input('Do you think the next card will be higher than the last card (enter y or n)? ')
+  validchoice
+  while validchoice = False:
+    Choice = input('Do you think the next card will be higher than the last card (enter y or n)? ').upper
+    if Choice = "YES" or "NO" or "Y" or "N":
+      validchoice = True
+    else:
+      print("Error. Please enter in a valid choice.")
   return Choice
 
 def DisplayEndOfGameMessage(Score):
