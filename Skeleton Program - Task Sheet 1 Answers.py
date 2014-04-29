@@ -244,6 +244,8 @@ def displayoptions():
   print()
 
 def getoptionchoice():
+  if OptionChoice == "1":
+    SetAceHighOrLow
 
 return optionchoice
 
