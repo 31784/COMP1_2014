@@ -237,24 +237,23 @@ def PlayGame(Deck, RecentScores):
     DisplayEndOfGameMessage(51)
     UpdateRecentScores(RecentScores, 51)
 
-def displayoptions():
+def options():
   print("OPTION MENU")
   print()
   print("1. Set Ace To be HIGH or LOW")
   print()
-
-def getoptionchoice():
-  if OptionChoice == "1":
-    SetAceHighOrLow
-
-return optionchoice
-
-def setoptions(optionchoice):
+  Valid = False
+  While not Valid:
+    OptionChoice=input("H for high and L for low: ").upper()
+    if OptionChoice in ["H","L"]:
+      Valid = True
+  if OptionChoice == "H":
+    SetAceHighorLow = "H"
+  else:
+    SetAceHighorLow = "L"
   valid=false
   while not valid:
     if option =='Q'
-
-def setacehighorlow():
   acerank
 
   
