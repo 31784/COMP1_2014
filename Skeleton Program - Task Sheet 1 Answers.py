@@ -237,26 +237,39 @@ def PlayGame(Deck, RecentScores):
     DisplayEndOfGameMessage(51)
     UpdateRecentScores(RecentScores, 51)
 
-def options():
+def DisplayOptions():
   print("OPTION MENU")
   print()
   print("1. Set Ace To be HIGH or LOW")
   print()
-  Valid = False
-  While not Valid:
-    OptionChoice=input("H for high and L for low: ").upper()
-    if OptionChoice in ["H","L"]:
-      Valid = True
-  if OptionChoice == "H":
-    SetAceHighorLow = "H"
-  else:
-    SetAceHighorLow = "L"
-  valid=false
-  while not valid:
-    if option =='Q'
-  acerank
 
-  
+def GetOptionChoice():
+  OptionChoice=input("Select an option from the menu (or enter q to quit): ")[0].lower()
+  return OptionChoice
+
+def SetOptions(OptionChoice):
+  OptionValid=False
+  while OptionValid==False:
+    if OptionChoice == "1":
+      SetAceHighOrLow()
+      OptionValid=True
+    elif OptionChoice == "q":
+      pass
+    else:
+      print("Please enter a valid choice")
+  return OptionChoice
+
+def SetAceHighOrLow():
+  ChoiceValid=False
+  Choice=input("Enter H to set the Ace card to be high and L for low: ").upper
+  while ChoiceValid==False:
+    if Choice == "H":
+      print("HIGH")
+    elif Choice == "L":
+      print("LOW")
+    else:
+      print("Please enter a valid choice")
+      
 if __name__ == '__main__':
   for Count in range(1, 53):
     Deck.append(TCard())
@@ -275,8 +288,9 @@ if __name__ == '__main__':
       PlayGame(Deck, RecentScores)
     elif Choice == '3':
       DisplayRecentScores(RecentScores)
-    elif Choice == '5':
-      displayoptions
-      option choice = getoptionschoice()
+    elif Choice == "5":
+       DisplayOptions()
+       GetOptionChoice(OptionChoice)
+       SetOptions(OptionChoice) 
     else:
       ResetRecentScores(RecentScores)
