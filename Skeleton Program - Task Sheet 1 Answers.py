@@ -22,6 +22,7 @@ class TRecentScore():
 Deck = [None]
 RecentScores = [None]
 Choice = ''
+AceRank = False
 
 def GetRank(RankNo):
   Rank = ''
@@ -248,8 +249,8 @@ def GetOptionChoice():
   return OptionChoice
 
 def SetOptions(OptionChoice):
-  OptionValid=False
-  while OptionValid==False:
+  OptionValid= False
+  while not OptionValid:
     if OptionChoice == "1":
       SetAceHighOrLow()
       OptionValid=True
@@ -257,7 +258,6 @@ def SetOptions(OptionChoice):
       pass
     else:
       print("Please enter a valid choice")
-  return OptionChoice
 
 def SetAceHighOrLow():
   ChoiceValid=False
@@ -290,7 +290,7 @@ if __name__ == '__main__':
       DisplayRecentScores(RecentScores)
     elif Choice == "5":
        DisplayOptions()
-       GetOptionChoice(OptionChoice)
-       SetOptions(OptionChoice) 
+       GetOptionChoice()
+       OptionChoice=SetOptions(OptionChoice) 
     else:
       ResetRecentScores(RecentScores)
