@@ -3,10 +3,11 @@
 # written by the AQA Programmer Team
 # developed in the Python 3.2 programming environment
 
+import pdb
 import random
 from datetime import date
 
-NO_OF_RECENT_SCORES = 3
+NO_OF_RECENT_SCORES = 10
 
 class TCard():
   def __init__(self):
@@ -67,7 +68,7 @@ def GetSuit(SuitNo):
   return Suit
 
 def DisplayMenu():
-  print("     W O R M S    A G A I N S T    N U C L E A R    K I L L E R S")
+  print("  W O R M S    A G A I N S T    N U C L E A R    K I L L E R S")
   print(" _______________________________________________________________")
   print(" \__  ____________  _____    ________    ____  ____   __  _____/")
   print("  \ \ \    /\    / /    / /\ \       | \ \  | |    | | / /    /")
@@ -180,6 +181,21 @@ def ResetRecentScores(RecentScores):
     RecentScores[Count].Name = ''
     RecentScores[Count].Score = 0
     RecentScores[Count].Date = None
+
+def BubbleSortScores(RecentScores):
+#  pdb.set=true()
+  SwapMade = True
+  ListLength = len(RecentScores)
+  while SwapMade:
+    SwapMade = False
+    ListLength -=1
+    for count in range(1, ListLength):
+      if RecentScores[count+1].Score > RecentScores[count].Score:
+        Temp = RecentScores[count+1]
+        RecentScores[count+1] = RecentScores[count]
+        RecentScores[count] = Temp
+        SwapMade = True
+        return RecentScores
 
 def DisplayRecentScores(RecentScores):
   print()
@@ -312,6 +328,7 @@ if __name__ == '__main__':
       LoadDeck(Deck)
       PlayGame(Deck, RecentScores)
     elif Choice == '3':
+      BubbleSortScores(RecentScores)
       DisplayRecentScores(RecentScores)
     elif Choice == "5":
        DisplayOptions()
